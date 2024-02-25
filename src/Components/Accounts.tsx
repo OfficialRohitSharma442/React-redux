@@ -1,18 +1,7 @@
-import React from "react"
 
 
-const Accounts = () => {
-    const [account, setAmount] = React.useState<any>({ amount: 0 });
-    const [inputvalue, setInputValue] = React.useState<any>(0);
-    const onIncrement = () => {
-        setAmount({ amount: +account.amount + 1 });
-    }
-    const onDecrement = () => {
-        setAmount({ amount: +account.amount - 1 });
-    }
-    const incremtByValue = () => {
-        setAmount({ amount: account.amount + inputvalue })
-    }
+
+const Accounts = ({ onIncrement, onDecrement, incremtByValue, account, setInputValue, inputvalue }: any) => {
 
     return (
         <div className="border border-white-500 p-4 mt-4">
