@@ -1,12 +1,12 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment, incrementByAmount } from "../slices/accountSlice";
+import { decrement, getUserAccount, increment, incrementByAmount } from "../slices/accountSlice";
 
 
 
 const Accounts = () => {
     const amount = useSelector((state: any) => state.account.amount);
-    const dispach = useDispatch();
+    const dispach: any = useDispatch();
     const [inputvalue, setInputValue] = React.useState<any>(0);
     return (
         <div className="border border-white-500 p-4 mt-4">
@@ -19,6 +19,7 @@ const Accounts = () => {
                     setInputValue(+e.target.value)
                 }} />
                 <button className="font-semibold bg-gray-300 text-black p-1" onClick={() => dispach(incrementByAmount(inputvalue))}>increment By {inputvalue} +</button>
+                <button className="font-semibold bg-gray-300 text-black p-1" onClick={() => dispach(getUserAccount(1))}>getUserAccount</button>
             </div>
         </div>
     )
