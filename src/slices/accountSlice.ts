@@ -29,9 +29,7 @@ export const acountSlice = createSlice({
         builder.addCase(getUserAccount.fulfilled, (state, action) => {
             state.amount = action.payload
         })
-        .addCase(getUserAccount.pending, (state, action) => {
-            state.pending
-        })
+
     }
 })
 export const { increment, decrement, incrementByAmount } = acountSlice.actions
